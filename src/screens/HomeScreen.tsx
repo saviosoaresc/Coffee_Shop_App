@@ -96,9 +96,19 @@ const HomeScreen = () => {
           contentContainerStyle={styles.CategoryScrollViewStyle}
         >
           {categories.map((data, index) => (
-            <View>
-              <TouchableOpacity>
-
+            <View
+              key={index.toString()}
+              style={styles.CategoryScrollViewContainer}
+            >
+              <TouchableOpacity onPress={() => {}}>
+                <Text
+                  style={[
+                    styles.CategoryText,
+                    categoryIndex.index == index ? {} : {},
+                  ]}
+                  
+                >{data}</Text>
+                {categoryIndex.index == index ? <View style={styles.ActiveCategory}/> : <></>}
               </TouchableOpacity>
             </View>
           ))}
@@ -141,8 +151,20 @@ const styles = StyleSheet.create({
     marginHorizontal: SPACING.space_20
   },
   CategoryScrollViewStyle: {
+    paddingHorizontal: SPACING.space_20,
+    marginBottom: SPACING.space_20,
+  },
+  CategoryScrollViewContainer:{
+    paddingHorizontal: SPACING.space_15,
+    
+  },
+  ActiveCategory:{
 
-  }
+  },
+  CategoryText:{
+
+  },
+
 })
 
 export default HomeScreen
