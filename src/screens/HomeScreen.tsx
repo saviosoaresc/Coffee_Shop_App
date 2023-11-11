@@ -6,9 +6,9 @@ import { COLORS, SPACING } from '../theme/theme';
 import HearderBar from '../components/HearderBar';
 import useLoadFonts from '../hooks/useLoadFonts';
 import * as SplashScreen from 'expo-splash-screen';
-import {Ionicons} from 'react-native-vector-icons';
+import { Ionicons } from 'react-native-vector-icons';
 
-  // 1:48:10
+// 1:48:10
 
 SplashScreen.preventAutoHideAsync();
 
@@ -55,6 +55,8 @@ const HomeScreen = () => {
 
   const tabBarHeight = useBottomTabBarHeight();
 
+  // console.log("categories = ", categories);
+
   const { fontsLoaded, onLayoutRootView } = useLoadFonts();
   if (!fontsLoaded)
     return null;
@@ -93,7 +95,13 @@ const HomeScreen = () => {
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={styles.CategoryScrollViewStyle}
         >
+          {categories.map((data, index) => (
+            <View>
+              <TouchableOpacity>
 
+              </TouchableOpacity>
+            </View>
+          ))}
         </ScrollView>
       </ScrollView>
     </View>
@@ -115,24 +123,24 @@ const styles = StyleSheet.create({
     color: COLORS.primaryWhiteHex,
     paddingLeft: SPACING.space_30
   },
-  InputContainerComponent:{
+  InputContainerComponent: {
     margin: 30,
     flexDirection: 'row',
     borderRadius: 20,
     backgroundColor: COLORS.primaryDarkGreyHex,
-    alignItems:'center'
+    alignItems: 'center'
   },
   TextInputContainer: {
-    flex:1,
+    flex: 1,
     height: 20 * 3,
     fontFamily: 'Poppins-Medium',
     fontSize: 14,
     color: COLORS.primaryWhiteHex,
   },
-  InputIcon:{
+  InputIcon: {
     marginHorizontal: SPACING.space_20
   },
-  CategoryScrollViewStyle:{
+  CategoryScrollViewStyle: {
 
   }
 })
