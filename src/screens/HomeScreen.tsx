@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, StatusBar, ScrollView, TouchableOpacity, TextInput } from 'react-native';
 import { useStore } from '../store/store';
 import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
-import { COLORS, SPACING } from '../theme/theme';
+import { BORDERRADIUS, COLORS, FONTSIZE, SPACING } from '../theme/theme';
 import HearderBar from '../components/HearderBar';
 import useLoadFonts from '../hooks/useLoadFonts';
 import * as SplashScreen from 'expo-splash-screen';
 import { Ionicons } from 'react-native-vector-icons';
+import { FlatList } from 'react-native-gesture-handler';
 
-// 1:48:10
+
 
 SplashScreen.preventAutoHideAsync();
 
@@ -44,9 +45,9 @@ const HomeScreen = () => {
     getCategoriesFromData(CoffeeList),
   );
   const [searchText, setsearchText] = useState('');
-  const [categoryIndex, setcategoryIndex] = useState({
-    index: 0,
-    category: categories[0],
+  const [categoryIndex, setCategoryIndex] = useState({
+    index: 1,
+    category: categories[1],
   });
 
   const [sortedCoffee, setSortedCoffee] = useState(
@@ -55,7 +56,7 @@ const HomeScreen = () => {
 
   const tabBarHeight = useBottomTabBarHeight();
 
-  // console.log("categories = ", categories);
+  // console.log("sortedCofee = ", sortedCoffee.length);
 
   const { fontsLoaded, onLayoutRootView } = useLoadFonts();
   if (!fontsLoaded)
@@ -100,19 +101,44 @@ const HomeScreen = () => {
               key={index.toString()}
               style={styles.CategoryScrollViewContainer}
             >
-              <TouchableOpacity onPress={() => {}}>
+              <TouchableOpacity 
+                style={styles.CategoryScrollViewItem} 
+                onPress={() => {
+                  setCategoryIndex({index: index, category: categories[index]})
+                  setSortedCoffee([
+                    ...getCoffeeList(categories[index], CoffeeList),
+                    
+                  ]);
+                 }}>
                 <Text
                   style={[
                     styles.CategoryText,
-                    categoryIndex.index == index ? {} : {},
+                    categoryIndex.index == index 
+                      ? { color: COLORS.primaryOrangeHex } 
+                      : {},
                   ]}
-                  
+
                 >{data}</Text>
-                {categoryIndex.index == index ? <View style={styles.ActiveCategory}/> : <></>}
+                {categoryIndex.index == index ? <View style={styles.ActiveCategory} /> : <></>}
               </TouchableOpacity>
             </View>
           ))}
         </ScrollView>
+
+        {/* Coffee FlatList */}
+
+        {/* <FlatList 
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          data={sortedCoffee}
+          contentContainerStyle={styles.FlatlistContainer}
+          keyExtractor={item => item.id}
+          renderItem={({item}) => {
+            return <TouchableOpacity></TouchableOpacity>
+          }}
+        /> */}
+
+        {/* Beans FlatList */}
       </ScrollView>
     </View>
   )
@@ -154,15 +180,29 @@ const styles = StyleSheet.create({
     paddingHorizontal: SPACING.space_20,
     marginBottom: SPACING.space_20,
   },
-  CategoryScrollViewContainer:{
+  CategoryScrollViewContainer: {
     paddingHorizontal: SPACING.space_15,
-    
-  },
-  ActiveCategory:{
 
   },
-  CategoryText:{
-
+  ActiveCategory: {
+    height: SPACING.space_10,
+    width: SPACING.space_10,
+    borderRadius: BORDERRADIUS.radius_10,
+    backgroundColor: COLORS.primaryOrangeHex,
+  },
+  CategoryText: {
+    fontFamily: 'Poppins-Semibold',
+    fontSize: FONTSIZE.size_16,
+    color: COLORS.primaryLightGreyHex,
+    marginBottom: SPACING.space_4,
+  },
+  CategoryScrollViewItem: {
+    alignItems: 'center',
+  },
+  FlatlistContainer:{
+    gap: SPACING.space_20,
+    paddingVertical: SPACING.space_20,
+    paddingHorizontal: SPACING.space_30,
   },
 
 })
