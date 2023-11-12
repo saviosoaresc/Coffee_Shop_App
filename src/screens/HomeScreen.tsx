@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, StatusBar, ScrollView, TouchableOpacity, TextInput } from 'react-native';
+import { StyleSheet, Text, View, StatusBar, ScrollView, TouchableOpacity, TextInput, FlatList } from 'react-native';
 import { useStore } from '../store/store';
 import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
 import { BORDERRADIUS, COLORS, FONTSIZE, SPACING } from '../theme/theme';
 import HearderBar from '../components/HearderBar';
 import useLoadFonts from '../hooks/useLoadFonts';
 import * as SplashScreen from 'expo-splash-screen';
-import { Ionicons } from 'react-native-vector-icons';
-import { FlatList } from 'react-native-gesture-handler';
+import { Ionicons } from '@expo/vector-icons';
+// import { FlatList } from 'react-native-gesture-handler';
+import CoffeeCard from '../components/CoffeeCard';
 
 
 
@@ -127,16 +128,31 @@ const HomeScreen = () => {
 
         {/* Coffee FlatList */}
 
-        {/* <FlatList 
+        <FlatList 
           horizontal
           showsHorizontalScrollIndicator={false}
           data={sortedCoffee}
           contentContainerStyle={styles.FlatlistContainer}
           keyExtractor={item => item.id}
           renderItem={({item}) => {
-            return <TouchableOpacity></TouchableOpacity>
+            return (
+              <TouchableOpacity>
+                <CoffeeCard 
+                  id={item.id}
+                  index={item.index}
+                  type={item.type}
+                  rosted={item.rosted}
+                  imagelink_square={item.imagelink_square}
+                  name={item.name}
+                  special_igredient={item.special_igredient}
+                  average_rating={item.average_rating}
+                  price={item.prices[2]}
+                  buttonPressHandler={() => {}}
+                />
+              </TouchableOpacity>
+            );
           }}
-        /> */}
+        />
 
         {/* Beans FlatList */}
       </ScrollView>
