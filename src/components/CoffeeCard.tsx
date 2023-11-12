@@ -60,10 +60,10 @@ const CoffeeCard: React.FC <CoffeeCardProps> = ({
             </Text>
             <TouchableOpacity>
                 <BGIcon
-                    color={COLORS.primaryWhiteHex}
                     name={'add'}
-                    BGColor={COLORS.primaryOrangeHex}
+                    color={COLORS.primaryWhiteHex}
                     size={FONTSIZE.size_10}
+                    BGColor={COLORS.primaryOrangeHex}
                 />
             </TouchableOpacity>
         </View>
