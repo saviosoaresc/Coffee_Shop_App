@@ -1,10 +1,10 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { Ionicons} from '@expo/vector-icons'
+import { Ionicons } from '@expo/vector-icons'
 import { BORDERRADIUS, SPACING } from '../theme/theme';
 
 interface BGIconProps {
-    name: string;
+    name: keyof typeof Ionicons.glyphMap; //ajustar a propriedade name para um tipo que o Ioncons aceite
     color: string;
     size: number;
     BGColor: string;
