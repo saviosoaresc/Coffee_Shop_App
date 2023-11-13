@@ -7,6 +7,7 @@ import BGIcon from './BGIcon';
 
 const CARD_WIDTH = Dimensions.get('window').width * 0.32;
 
+
 interface CoffeeCardProps {
     id: string;
     index: number;
@@ -35,7 +36,7 @@ const CoffeeCard: React.FC <CoffeeCardProps> = ({
   return (
     <LinearGradient
         start={{x:0, y:0}}
-        end={{x:0, y:0}}
+        end={{x:1, y:1}}
         style={styles.CardLinearGradientContainer}
         colors={[COLORS.primaryGreyHex, COLORS.primaryBlackHex]}>
         <ImageBackground 
@@ -43,18 +44,18 @@ const CoffeeCard: React.FC <CoffeeCardProps> = ({
             style={styles.CardImageBG}
             resizeMode='cover'
         >
-            <View>
+            <View style={styles.CardRatingContainer}>
                 <AntDesign 
                     color={COLORS.primaryOrangeHex} 
                     name='star'
-                    size={FONTSIZE.size_18}
+                    size={FONTSIZE.size_16}
                 />
                 <Text style={styles.CardRatingText}>{average_rating}</Text>
             </View>
         </ImageBackground>
-        <Text style={{color: 'white'}}>{name}</Text>
-        <Text style={{color: 'white'}}>{special_igredient}</Text>
-        <View>
+        <Text>{name}</Text>
+        <Text>{special_igredient}</Text>
+        <View style={styles.CardFooterBow}>
             <Text style={{color: 'white'}}>
                 $ <Text>{price.price}</Text>
             </Text>
@@ -73,9 +74,7 @@ const CoffeeCard: React.FC <CoffeeCardProps> = ({
 
 
 const styles = StyleSheet.create({
-    CardLinearGradientContainer:{
-
-    },
+    CardLinearGradientContainer:{},
     CardImageBG:{
         width: CARD_WIDTH,
         height: CARD_WIDTH,
@@ -83,7 +82,26 @@ const styles = StyleSheet.create({
         marginBottom: SPACING.space_15,
         overflow: 'hidden',
     },
-    CardRatingText:{},
+    CardRatingContainer:{
+        flexDirection: 'row',
+        backgroundColor: COLORS.primaryBlackHex,
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: SPACING.space_10,
+        paddingHorizontal: SPACING.space_15,
+        position: 'absolute',
+        borderBottomLeftRadius: BORDERRADIUS.radius_20,
+        borderTopRightRadius: BORDERRADIUS.radius_20,
+        top: 0,
+        right: 0,
+    },
+    CardRatingText:{
+        fontFamily: 'Poppins-Medium',
+        lineHeight: 22,
+        fontSize: FONTSIZE.size_14,
+        color: COLORS.primaryWhiteHex
+    },
+    CardFooterBow: {},
 
 
 })
