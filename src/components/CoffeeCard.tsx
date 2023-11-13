@@ -53,11 +53,11 @@ const CoffeeCard: React.FC <CoffeeCardProps> = ({
                 <Text style={styles.CardRatingText}>{average_rating}</Text>
             </View>
         </ImageBackground>
-        <Text>{name}</Text>
-        <Text>{special_igredient}</Text>
+        <Text style={styles.CardTitle}>{name}</Text>
+        <Text style={styles.CardSubTitle}>{special_igredient}</Text>
         <View style={styles.CardFooterBow}>
-            <Text style={{color: 'white'}}>
-                $ <Text>{price.price}</Text>
+            <Text style={styles.CardPriceCurrency}>
+                $ <Text style={styles.CardPrice}>{price.price}</Text>
             </Text>
             <TouchableOpacity>
                 <BGIcon
@@ -74,7 +74,10 @@ const CoffeeCard: React.FC <CoffeeCardProps> = ({
 
 
 const styles = StyleSheet.create({
-    CardLinearGradientContainer:{},
+    CardLinearGradientContainer:{
+        padding: SPACING.space_15,
+        borderRadius: BORDERRADIUS.radius_25,
+    },
     CardImageBG:{
         width: CARD_WIDTH,
         height: CARD_WIDTH,
@@ -97,13 +100,34 @@ const styles = StyleSheet.create({
     },
     CardRatingText:{
         fontFamily: 'Poppins-Medium',
+        color: COLORS.primaryWhiteHex,
         lineHeight: 22,
         fontSize: FONTSIZE.size_14,
-        color: COLORS.primaryWhiteHex
     },
-    CardFooterBow: {},
-
-
+    CardTitle:{
+        fontFamily: 'Poppins-Medium',
+        color: COLORS.primaryWhiteHex,
+        fontSize: FONTSIZE.size_16,
+    },
+    CardSubTitle:{
+        fontFamily: 'Poppins-Light',
+        color: COLORS.primaryWhiteHex,
+        fontSize: FONTSIZE.size_10,
+    },
+    CardFooterBow: {
+        flexDirection:'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: SPACING.space_15
+    },
+    CardPriceCurrency:{
+        fontFamily: 'Poppins-Semibold',
+        color: COLORS.primaryOrangeHex,
+        fontSize: FONTSIZE.size_18
+    },
+    CardPrice:{
+        color: COLORS.primaryWhiteHex,
+    },
 })
 
 export default CoffeeCard
