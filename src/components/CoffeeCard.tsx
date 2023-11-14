@@ -63,7 +63,7 @@ const CoffeeCard: React.FC <CoffeeCardProps> = ({
                 <BGIcon
                     name={'add'}
                     color={COLORS.primaryWhiteHex}
-                    size={FONTSIZE.size_10}
+                    size={FONTSIZE.size_18}
                     BGColor={COLORS.primaryOrangeHex}
                 />
             </TouchableOpacity>
@@ -110,15 +110,16 @@ const styles = StyleSheet.create({
         fontSize: FONTSIZE.size_16,
     },
     CardSubTitle:{
-        fontFamily: 'Poppins-Light',
+        // fontFamily: 'Poppins-Light',
         color: COLORS.primaryWhiteHex,
         fontSize: FONTSIZE.size_10,
     },
     CardFooterBow: {
         flexDirection:'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginTop: SPACING.space_15
+        justifyContent: 'space-between',
+        // alignSelf: 'center',
+        marginTop: SPACING.space_15,
+        // alignSelf: 'stretch'
     },
     CardPriceCurrency:{
         fontFamily: 'Poppins-Semibold',
