@@ -37,7 +37,7 @@ const getCoffeeList = (category: string, data: any) => {
   }
 }
 
-const HomeScreen = ({navigation}: any) => {
+const HomeScreen = ({ navigation }: any) => {
 
   // constante que puxa os dados do arquivo store pegando os coffee
   const CoffeeList = useStore((state: any) => state.CoffeeList);
@@ -201,7 +201,11 @@ const HomeScreen = ({navigation}: any) => {
             return (
               <TouchableOpacity
                 onPress={() => {
-                  navigation.push('DetailsScreen')
+                  navigation.push('Details', {
+                    index: item.index,
+                    id: item.id,
+                    type: item.type
+                  })
                 }}>
                 {/* passa pro CoffeeCard todos esses parametros */}
                 <CoffeeCard
@@ -236,7 +240,11 @@ const HomeScreen = ({navigation}: any) => {
             return (
               <TouchableOpacity
                 onPress={() => {
-                  navigation.navigate('');
+                  navigation.push('Details', {
+                    index: item.index,
+                    id: item.id,
+                    type: item.type
+                  })
                 }}>
                 {/* passa pro CoffeeCard todos esses parametros */}
                 <CoffeeCard
