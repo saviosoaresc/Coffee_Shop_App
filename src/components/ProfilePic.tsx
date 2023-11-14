@@ -6,7 +6,7 @@ const ProfilePic = () => {
   return (
     <View style={styles.ImageContainer}>
       <Image 
-        source={require('../assets/app_images/avatar.png')} 
+        source={require('../assets/app_images/avatarsavio.jpg')} 
         style={styles.Image}
       />
     </View>
@@ -25,7 +25,8 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
   Image:{
-
+    height: '100%',
+    width: '100%'
   }
 })
 
