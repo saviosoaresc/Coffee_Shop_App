@@ -31,10 +31,11 @@ const HearderBar: React.FC<HearderBarProps> = ({title}) => {
 const styles = StyleSheet.create({
     HearderContainer:{
         marginTop: '3%',
-        padding: SPACING.space_30,
+        padding: SPACING.space_24,
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
+        // backgroundColor: 'red'
     },
     HeaderText:{
         fontFamily: 'Poppins-Semibold',
