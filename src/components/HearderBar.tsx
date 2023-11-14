@@ -20,7 +20,7 @@ const HearderBar: React.FC<HearderBarProps> = ({title}) => {
 
     return (
     <View style={styles.HearderContainer}>
-        <GradientBGIcon name='ios-menu' color={COLORS.primaryLightGreyHex} size={FONTSIZE.size_28}/>
+        <GradientBGIcon name='menu' color={COLORS.primaryLightGreyHex} size={FONTSIZE.size_28}/>
         <Text style={styles.HeaderText}>{title}</Text>
         <ProfilePic/>
     </View>
