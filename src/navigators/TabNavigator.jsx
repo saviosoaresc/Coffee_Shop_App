@@ -15,7 +15,6 @@ const Tab = createBottomTabNavigator();
 
 const TabNavigator = () => {
     return (
-        // <View style={{borderRadius: 100}}>
             <Tab.Navigator
                 screenOptions={{
                     tabBarHideOnKeyboard: true,
@@ -95,13 +94,12 @@ const TabNavigator = () => {
 
 const styles = StyleSheet.create({
     tabBarStyle: {
-        height: 80,
+        // flex: 1,
+        height: '8%',
         position: 'absolute',
         borderTopColor: 'transparent',
-        width: '90%',
-        marginLeft: '6%',
-        marginBottom: '2%',
-        borderRadius: 100
+        width: '78%',
+        marginLeft: '11%',
     },
     BlurViewStyle: {
         position: 'absolute',
@@ -109,7 +107,7 @@ const styles = StyleSheet.create({
         bottom: 0,
         left: 0,
         right: 0,
-        borderRadius: 100
+        // borderRadius: 100
     }
 
 });
