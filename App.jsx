@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -18,24 +18,24 @@ export default function App() {
   }, [])
   return (
     <NavigationContainer>
-      <StatusBar style='light'/>
-      <Stack.Navigator screenOptions={{headerShown: false}}>
+      <StatusBar style='light' />
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen
           name='Tab'
           component={TabNavigator}
-          options={{animation: 'slide_from_bottom'}}>
+          options={{ animation: 'slide_from_bottom' }}>
         </Stack.Screen>
 
         <Stack.Screen
           name='Details'
           component={DetailsScreen}
-          options={{animation: 'slide_from_bottom'}}>
+          options={{ animation: 'slide_from_bottom' }}>
         </Stack.Screen>
 
         <Stack.Screen
           name='Payment'
           component={PaymentScreen}
-          options={{animation: 'slide_from_bottom'}}>
+          options={{ animation: 'slide_from_bottom' }}>
         </Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
