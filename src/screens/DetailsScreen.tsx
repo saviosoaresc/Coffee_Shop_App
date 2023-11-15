@@ -8,6 +8,18 @@ import ImageBackgroundInfo from '../components/ImageBackgroundInfo';
 
 const DetailsScreen = ({navigation, route}: any) => {
 
+  const addToFavoriteList = useStore((state: any) => state.addToFavoriteList);
+  const deleteFromFavoriteList = useStore((state: any) => state.deleteFromFavoriteList);
+
+  const ToggleFavourite = (favourite: boolean, type: string, id: string) => {
+    favourite ? deleteFromFavoriteList(type, id) : addToFavoriteList(type, id)
+  };
+
+  //funcao para fechar a tela de Detalhes
+  const BackHandler = () => {
+    navigation.pop();
+  }
+
   const ItemOfIdex = useStore((state: any) => 
     route.params.type == 'Coffee' ? state.CoffeeList : state.BeanList,
   )[route.params.index];
@@ -31,8 +43,9 @@ const DetailsScreen = ({navigation, route}: any) => {
           average_rating={ItemOfIdex.average_rating}
           ratings_count={ItemOfIdex.ratings_count}
           rosted={ItemOfIdex.rosted}
-          BackHandler={() => {}}
-          ToogleFavourite={() => {}}
+          //chama o fechar a tela
+          BackHandler={BackHandler}
+          ToggleFavourite={ToggleFavourite}
         />
       </ScrollView>
     </View>
