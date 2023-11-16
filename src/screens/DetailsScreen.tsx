@@ -29,7 +29,7 @@ const DetailsScreen = ({ navigation, route }: any) => {
     navigation.pop();
   }
 
-  const addToCartHandler = ({
+  const addToCarthandler = ({
     id,
     index,
     name,
@@ -39,7 +39,6 @@ const DetailsScreen = ({ navigation, route }: any) => {
     type,
     price,
   }: any) => {
-    
       addToCart({
         id,
         index,
@@ -130,9 +129,9 @@ const DetailsScreen = ({ navigation, route }: any) => {
           </View>
           <PaymentFooter
             price={price}
-            buttonTitle='Add to Cart'
+            buttonTitle="Add to Cart"
             buttonPressHandler={() => {
-              addToCartHandler({
+              addToCarthandler({
                 id: ItemOfIdex.id,
                 index: ItemOfIdex.index,
                 name: ItemOfIdex.name,
