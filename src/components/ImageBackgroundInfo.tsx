@@ -70,17 +70,6 @@ const ImageBackgroundInfo: React.FC<ImageBackgrounInfoProps> = ({
           </View>
         ) : (
           <View style={styles.ImageHeaderBarContainerWithoutBack}>
-            {/* <TouchableOpacity
-              onPress={() => {
-                BackHandler();
-              }}
-            >
-              <GradientBGIcon
-                name='chevron-left'
-                color={COLORS.primaryLightGreyHex}
-                size={FONTSIZE.size_16}
-              />
-            </TouchableOpacity> */}
             <TouchableOpacity
               onPress={() => {
                 ToggleFavourite(favourite, type, id);
@@ -154,7 +143,7 @@ const ImageBackgroundInfo: React.FC<ImageBackgrounInfoProps> = ({
 const styles = StyleSheet.create({
   ItemBackgroundImage: {
     width: '100%',
-    aspectRatio: 20 / 25,
+    aspectRatio: 22 / 25,
     justifyContent: 'space-between'
   },
   ImageHeaderBarContainerWithBack: {
