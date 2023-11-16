@@ -10,106 +10,96 @@ import OrderHistoryScreen from '../screens/OrderHistoryScreen';
 import { Entypo, FontAwesome5, Ionicons } from '@expo/vector-icons';
 
 
-
 const Tab = createBottomTabNavigator();
 
 const TabNavigator = () => {
     return (
-            <Tab.Navigator
-                screenOptions={{
-                    tabBarHideOnKeyboard: true,
-                    headerShown: false,
-                    tabBarShowLabel: false,
-                    tabBarStyle: styles.tabBarStyle,
+        <Tab.Navigator
+            screenOptions={{
+                tabBarHideOnKeyboard: true,
+                headerShown: false,
+                tabBarShowLabel: false,
+                tabBarStyle: styles.tabBarStyle,
 
-                    tabBarBackground: () => (
-                        <BlurView tint='dark' intensity={30} style={styles.BlurViewStyle} />
+                tabBarBackground: () => (
+                    <BlurView tint='dark' intensity={30} style={StyleSheet.absoluteFill} />
+                ),
+            }}
+        >
+            <Tab.Screen
+                name='Home'
+                component={HomeScreen}
+                options={{
+                    tabBarIcon: ({ focused, color, size }) => (
+                        <Entypo
+                            name='home'
+                            size={25}
+                            color={
+                                focused ? COLORS.primaryOrangeHex : COLORS.primaryLightGreyHex 
+                            }
+                        />
+                    ),
+                }}></Tab.Screen>
+            <Tab.Screen
+                name='Cart'
+                component={CartScreen}
+                options={{
+                    tabBarIcon: ({ focused, color, size }) => (
+                        <FontAwesome5
+                            name='shopping-bag'
+                            size={25}
+                            color={
+                                focused ? COLORS.primaryOrangeHex : COLORS.primaryLightGreyHex
+                            }
+                        />
                     ),
                 }}
-            >
-                <Tab.Screen
-                    name='Home'
-                    component={HomeScreen}
-                    options={{
-                        tabBarIcon: ({ focused, color, size }) => (
-                            <Entypo
-                                name='home'
-                                size={25}
-                                color={
-                                    focused ? COLORS.primaryOrangeHex : COLORS.primaryLightGreyHex
-                                }
-                            />
-                        ),
-                    }}></Tab.Screen>
-                <Tab.Screen
-                    name='Cart'
-                    component={CartScreen}
-                    options={{
-                        tabBarIcon: ({ focused, color, size }) => (
-                            <FontAwesome5
-                                name='shopping-bag'
-                                size={25}
-                                color={
-                                    focused ? COLORS.primaryOrangeHex : COLORS.primaryLightGreyHex
-                                }
-                            />
-                        ),
-                    }}
-                ></Tab.Screen>
-                <Tab.Screen
-                    name='Favorite'
-                    component={FavoriteScreen}
-                    options={{
-                        tabBarIcon: ({ focused, color, size }) => (
-                            <Entypo
-                                name='heart'
-                                size={25}
-                                color={
-                                    focused ? COLORS.primaryOrangeHex : COLORS.primaryLightGreyHex
-                                }
-                            />
-                        ),
-                    }}
-                ></Tab.Screen>
-                <Tab.Screen
-                    name='History'
-                    component={OrderHistoryScreen}
-                    options={{
-                        tabBarIcon: ({ focused, color, size }) => (
-                            <Ionicons
-                                name='notifications'
-                                size={25}
-                                color={
-                                    focused ? COLORS.primaryOrangeHex : COLORS.primaryLightGreyHex
-                                }
-                            />
-                        ),
-                    }}
-                ></Tab.Screen>
-            </Tab.Navigator>
-        // </View>
+            ></Tab.Screen>
+            <Tab.Screen
+                name='Favorite'
+                component={FavoriteScreen}
+                options={{
+                    tabBarIcon: ({ focused, color, size }) => (
+                        <Entypo
+                            name='heart'
+                            size={25}
+                            color={
+                                focused ? COLORS.primaryOrangeHex : COLORS.primaryLightGreyHex
+                            }
+                        />
+                    ),
+                }}
+            ></Tab.Screen>
+            <Tab.Screen
+                name='History'
+                component={OrderHistoryScreen}
+                options={{
+                    tabBarIcon: ({ focused, color, size }) => (
+                        <Ionicons
+                            name='notifications'
+                            size={25}
+                            color={
+                                focused ? COLORS.primaryOrangeHex : COLORS.primaryLightGreyHex
+                            }
+                        />
+                    ),
+                }}
+            ></Tab.Screen>
+        </Tab.Navigator>
     )
 }
 
 
 const styles = StyleSheet.create({
     tabBarStyle: {
-        // flex: 1,
-        height: '8%',
+        flex: 1,
         position: 'absolute',
-        borderTopColor: 'transparent',
+        height: '8%',
         width: '78%',
         marginLeft: '11%',
-    },
-    BlurViewStyle: {
-        position: 'absolute',
-        top: 0,
-        bottom: 0,
-        left: 0,
-        right: 0,
-        // borderRadius: 100
+        marginBottom: '5%',
+        borderTopColor: 'transparent',
     }
-
 });
 
 export default TabNavigator
