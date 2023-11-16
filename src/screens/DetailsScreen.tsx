@@ -6,6 +6,7 @@ import ImageBackgroundInfo from '../components/ImageBackgroundInfo';
 import PaymentFooter from '../components/PaymentFooter';
 
 //erro ao desfavoritar
+//4:43:00
 
 const DetailsScreen = ({ navigation, route }: any) => {
   const ItemOfIdex = useStore((state: any) =>
