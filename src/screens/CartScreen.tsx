@@ -44,8 +44,16 @@ const CartScreen = ({ navigation, route }: any) => {
             {CartList.length == 0 ? (
               <EmptyListAnimation title={'Cart is Empty'} />
             ) : (
-              (
                 <View style={styles.ListItemContainer}>
+                  {CartList.length != 0 ? (
+                    <PaymentFooter
+                      buttonPressHandler={buttonPressHandler}
+                      buttonTitle="Pay"
+                      price={{ price: CartPrice, currency: '$' }}
+                    />
+                  ) : (
+                    <></>
+                  )}
                   {CartList.map((data: any) => (
                     <TouchableOpacity
                       onPress={() => {
@@ -74,19 +82,8 @@ const CartScreen = ({ navigation, route }: any) => {
                     </TouchableOpacity>
                   ))}
                 </View>
-              )
             )}
           </View>
-
-          {CartList.length != 0 ? (
-            <PaymentFooter
-              buttonPressHandler={buttonPressHandler}
-              buttonTitle="Pay"
-              price={{price: CartPrice, currency: '$'}}
-            />
-          ) : (
-            <></>
-          )}
         </View>
       </ScrollView>
     </View>
