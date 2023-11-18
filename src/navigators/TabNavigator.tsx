@@ -99,6 +99,8 @@ const styles = StyleSheet.create({
         marginLeft: '11%',
         marginBottom: '5%',
         borderTopColor: 'transparent',
+        overflow: 'hidden',
+        borderRadius: 50
     }
 });
 
