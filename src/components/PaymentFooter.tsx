@@ -42,8 +42,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         gap: SPACING.space_20,
-        padding: SPACING.space_20,
-
+        // padding: SPACING.space_20,
     },
     PriceContainer:{
         alignItems: 'center',
@@ -64,11 +63,12 @@ const styles = StyleSheet.create({
     },
     PayButton:{
         backgroundColor: COLORS.primaryOrangeHex,
-        flex:1,
         alignItems: 'center',
         justifyContent: 'center',
-        height: SPACING.space_30 * 2,
-        borderRadius: BORDERRADIUS.radius_20
+        borderRadius: BORDERRADIUS.radius_20,
+        height: SPACING.space_28 * 1.8,
+        width: '50%'
+
     },
     ButtonText:{
         fontFamily: 'Poppins-Semibold',
