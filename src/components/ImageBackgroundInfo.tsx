@@ -38,7 +38,7 @@ const ImageBackgroundInfo: React.FC<ImageBackgrounInfoProps> = ({
   ToggleFavourite,
 }) => {
   return (
-    <View style={{ marginTop: '8%' }}>
+    <View style={{ marginTop: '8%', }}>
       <ImageBackground
         source={imagelink_portrait}
         style={styles.ItemBackgroundImage}
