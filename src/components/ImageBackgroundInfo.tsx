@@ -3,7 +3,8 @@ import { StyleSheet, Text, View, ImageProps, ImageBackground, TouchableOpacity }
 import BGIcon from './BGIcon';
 import GradientBGIcon from './GradientBGIcon';
 import { BORDERRADIUS, COLORS, FONTFAMILY, FONTSIZE, SPACING } from '../theme/theme';
-import { Entypo, MaterialCommunityIcons } from '@expo/vector-icons' 
+import { Entypo, MaterialCommunityIcons } from '@expo/vector-icons'
+import { BlurView } from 'expo-blur';
 
 interface ImageBackgrounInfoProps {
   EnableBackHandler: boolean;
@@ -87,6 +88,11 @@ const ImageBackgroundInfo: React.FC<ImageBackgrounInfoProps> = ({
         )}
 
         <View style={styles.ImageInfoOuterContainer}>
+          <BlurView
+            style={StyleSheet.absoluteFill}
+            intensity={36}
+            tint='dark'
+          />
           <View style={styles.ImageInfoInnerContainer}>
             <View style={styles.InfoContainerRow}>
               <View>
@@ -123,7 +129,7 @@ const ImageBackgroundInfo: React.FC<ImageBackgrounInfoProps> = ({
             </View>
             <View style={styles.InfoContainerRow}>
               <View style={styles.RatingContainer}>
-                <Entypo name='star' color={COLORS.primaryOrangeHex} size={FONTSIZE.size_20}/>
+                <Entypo name='star' color={COLORS.primaryOrangeHex} size={FONTSIZE.size_20} />
                 <Text style={styles.RatingText}>{average_rating}</Text>
                 <Text style={styles.RatingCountText}>({ratings_count})</Text>
               </View>
@@ -144,26 +150,26 @@ const styles = StyleSheet.create({
   ItemBackgroundImage: {
     width: '100%',
     aspectRatio: 22 / 25,
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
   ImageHeaderBarContainerWithBack: {
     padding: SPACING.space_30,
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
   ImageHeaderBarContainerWithoutBack: {
     padding: SPACING.space_30,
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'flex-end'
+    justifyContent: 'flex-end',
   },
   ImageInfoOuterContainer: {
     paddingVertical: SPACING.space_24,
     paddingHorizontal: SPACING.space_30,
-    backgroundColor: COLORS.primaryBlackRGBA,
     borderTopLeftRadius: BORDERRADIUS.radius_20 * 2,
     borderTopRightRadius: BORDERRADIUS.radius_20 * 2,
+    overflow: 'hidden',
   },
   ImageInfoInnerContainer: {
     justifyContent: 'center',
@@ -184,12 +190,12 @@ const styles = StyleSheet.create({
     fontSize: FONTSIZE.size_12,
     color: COLORS.primaryWhiteHex,
   },
-  ItemPropertiesContainer:{
+  ItemPropertiesContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: SPACING.space_20
   },
-  ProperFirst:{
+  ProperFirst: {
     height: 55,
     width: 55,
     borderRadius: BORDERRADIUS.radius_15,
@@ -202,28 +208,28 @@ const styles = StyleSheet.create({
     fontSize: FONTSIZE.size_12,
     color: COLORS.primaryWhiteHex,
   },
-  PropertyTextLast:{
+  PropertyTextLast: {
     fontFamily: 'Poppins-Medium',
     fontSize: FONTSIZE.size_12,
     color: COLORS.primaryWhiteHex,
     marginTop: SPACING.space_2 + SPACING.space_4,
   },
-  RatingContainer:{
+  RatingContainer: {
     flexDirection: 'row',
     gap: SPACING.space_10,
     alignItems: 'center'
   },
-  RatingText:{
+  RatingText: {
     fontFamily: 'Poppins-Semibold',
     fontSize: FONTSIZE.size_18,
     color: COLORS.primaryWhiteHex
   },
-  RatingCountText:{
+  RatingCountText: {
     fontFamily: 'Poppins-Regular',
     fontSize: FONTSIZE.size_12,
     color: COLORS.primaryWhiteHex
   },
-  RoastedContainer:{
+  RoastedContainer: {
     height: 55,
     width: 55 * 2 + SPACING.space_20,
     borderRadius: BORDERRADIUS.radius_15,
@@ -231,11 +237,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: COLORS.primaryBlackHex
   },
-  RoastedText:{
+  RoastedText: {
     fontFamily: 'Poppins-Regular',
     fontSize: FONTSIZE.size_10,
     color: COLORS.primaryWhiteHex
   },
+
 })
 
 export default ImageBackgroundInfo
