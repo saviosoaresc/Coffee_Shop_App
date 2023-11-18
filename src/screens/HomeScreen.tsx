@@ -251,7 +251,7 @@ const HomeScreen = ({ navigation }: any) => {
                   roasted={item.rosted}
                   imagelink_square={item.imagelink_square}
                   name={item.name}
-                  special_igredient={item.special_igredient}
+                  special_ingredient={item.special_ingredient}
                   average_rating={item.average_rating}
                   price={item.prices[2]}
                   buttonPressHandler={CoffeeCardAddToCart}
@@ -290,7 +290,7 @@ const HomeScreen = ({ navigation }: any) => {
                   roasted={item.rosted}
                   imagelink_square={item.imagelink_square}
                   name={item.name}
-                  special_igredient={item.special_igredient}
+                  special_ingredient={item.special_ingredient}
                   average_rating={item.average_rating}
                   price={item.prices[2]}
                   buttonPressHandler={CoffeeCardAddToCart}
