@@ -1,4 +1,8 @@
-import { StyleSheet, Text, View, Dimensions, ImageBackground, ImageProps, TouchableOpacity } from 'react-native'
+import {
+    StyleSheet, Text, View,
+    Dimensions, ImageBackground, ImageProps,
+    TouchableOpacity
+} from 'react-native'
 import React from 'react'
 import { LinearGradient } from 'expo-linear-gradient';
 import { BORDERRADIUS, COLORS, FONTSIZE, SPACING } from '../theme/theme';
@@ -15,7 +19,7 @@ interface CoffeeCardProps {
     roasted: string;
     imagelink_square: ImageProps;
     name: string;
-    special_igredient: string;
+    special_ingredient: string;
     average_rating: number;
     price: any;
     buttonPressHandler: any;
@@ -28,7 +32,7 @@ const CoffeeCard: React.FC<CoffeeCardProps> = ({
     roasted,
     imagelink_square,
     name,
-    special_igredient,
+    special_ingredient,
     average_rating,
     price,
     buttonPressHandler,
@@ -54,25 +58,24 @@ const CoffeeCard: React.FC<CoffeeCardProps> = ({
                 </View>
             </ImageBackground>
             <Text style={styles.CardTitle}>{name}</Text>
-            <Text style={styles.CardSubTitle}>{special_igredient}</Text>
+            <Text style={styles.CardSubTitle}>{special_ingredient}</Text>
             <View style={styles.CardFooterBow}>
                 <Text style={styles.CardPriceCurrency}>
                     $ <Text style={styles.CardPrice}>{price.price}</Text>
                 </Text>
-                <TouchableOpacity onPress={() => {
-                    buttonPressHandler({
-                        id,
-                        index,
-                        type,
-                        roasted,
-                        imagelink_square,
-                        name,
-                        special_igredient,
-                        // average_rating,
-                        prices:[{...price, quantify: 1}],
-                        // buttonPressHandler,
-                    })
-                }}>
+                <TouchableOpacity
+                    onPress={() => {
+                        buttonPressHandler({
+                            id,
+                            index,
+                            type,
+                            roasted,
+                            imagelink_square,
+                            name,
+                            special_ingredient,
+                            prices: [{ ...price, quantity: 1 }],
+                        })
+                    }}>
                     <BGIcon
                         name={'add'}
                         color={COLORS.primaryWhiteHex}
