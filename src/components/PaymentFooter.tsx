@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         gap: SPACING.space_20,
-        marginBottom: '3%'
+        marginBottom: '5%'
         // padding: SPACING.space_18,
     },
     PriceContainer:{
