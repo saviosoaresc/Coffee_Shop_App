@@ -8,7 +8,7 @@ import {
 import { useStore } from '../store/store';
 import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
 import { BORDERRADIUS, COLORS, FONTSIZE, SPACING } from '../theme/theme';
-import HearderBar from '../components/HearderBar';
+import HeaderBar from '../components/HeaderBar';
 import useLoadFonts from '../hooks/useLoadFonts';
 import * as SplashScreen from 'expo-splash-screen';
 import { Ionicons } from '@expo/vector-icons';
@@ -137,7 +137,7 @@ const HomeScreen = ({ navigation }: any) => {
     <View onLayout={onLayoutRootView} style={styles.ScreenContainer}>
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.ScrollViewFlex}>
         {/* APP HEADER */}
-        <HearderBar />
+        <HeaderBar />
 
         <Text style={styles.ScreenTitle}>Find the best{'\n'}cofee for you</Text>
 
