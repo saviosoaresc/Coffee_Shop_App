@@ -1,20 +1,20 @@
-import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-import LottieView from 'lottie-react-native'
+import React, {useRef, useEffect} from 'react'
+import { StyleSheet, Text, View, Animated, Easing } from 'react-native'
+import LottieView from 'lottie-react-native';
 import { COLORS, FONTSIZE } from '../theme/theme';
 
-interface EmptyListAnimationProps{
-    title: string;
+interface EmptyListAnimationProps {
+  title: string;
 }
 
-const EmptyListAnimation: React.FC<EmptyListAnimationProps> = ({title}) => {
+const EmptyListAnimation: React.FC<EmptyListAnimationProps> = ({ title }) => {
   return (
-    <View>
+    <View style={styles.EmptyCartContainer}>
       <LottieView
-      style={styles.EmptyCartContainer}
-        source={require('../lottie/coffeecup.json')}
-        autoPlay
+        style={styles.LottieStyle}
+        source={require('../lottie/coffee.json')}
         loop
+        autoPlay
       />
       <Text style={styles.LottieText}>{title}</Text>
     </View>
@@ -23,19 +23,21 @@ const EmptyListAnimation: React.FC<EmptyListAnimationProps> = ({title}) => {
 
 
 const styles = StyleSheet.create({
-    EmptyCartContainer: {
-        flex: 1,
-        justifyContent: 'center',
-      },
-      LottieStyle: {
-        height: 300,
-      },
-      LottieText: {
-        fontFamily: 'Poppins_Medium',
-        fontSize: FONTSIZE.size_16,
-        color: COLORS.primaryOrangeHex,
-        textAlign: 'center',
-      },
+  EmptyCartContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  LottieStyle: {
+    height: 200,
+  },
+  LottieText: {
+    fontFamily: 'Poppins-Medium',
+    fontSize: FONTSIZE.size_16,
+    color: COLORS.primaryOrangeHex,
+    textAlign: 'center',
+    marginTop: '4%'
+  },
 })
 
 export default EmptyListAnimation
