@@ -6,7 +6,7 @@ import React from 'react'
 import { useStore } from '../store/store';
 import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
 import { COLORS, SPACING } from '../theme/theme';
-import HearderBar from '../components/HearderBar';
+import HeaderBar from '../components/HeaderBar';
 import EmptyListAnimation from '../components/EmptyListAnimation';
 import PaymentFooter from '../components/PaymentFooter';
 import CartItem from '../components/CartItem';
@@ -40,7 +40,7 @@ const CartScreen = ({ navigation, route }: any) => {
       >
         <View style={[styles.ScrollViewInnerView, { marginBottom: tabBarHeight }]}>
           <View style={styles.ItemContainer}>
-            <HearderBar title="Cart" />
+            <HeaderBar title="Cart" />
             {CartList.length == 0 ? (
               <EmptyListAnimation title={'Cart is Empty'} />
             ) : (
