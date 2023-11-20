@@ -67,8 +67,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: BORDERRADIUS.radius_20,
-        height: SPACING.space_28 * 1.8,
-        width: '50%'
+        height: SPACING.space_28 * 2,
+        width: '60%'
 
     },
     ButtonText:{
