@@ -38,7 +38,7 @@ const ImageBackgroundInfo: React.FC<ImageBackgrounInfoProps> = ({
   ToggleFavourite,
 }) => {
   return (
-    <View style={{ marginTop: '8%', }}>
+    <View style={styles.container}>
       <ImageBackground
         source={imagelink_portrait}
         style={styles.ItemBackgroundImage}
@@ -147,18 +147,26 @@ const ImageBackgroundInfo: React.FC<ImageBackgrounInfoProps> = ({
 
 
 const styles = StyleSheet.create({
+  container:{
+    // marginTop: '6%',
+    overflow: 'hidden',
+    borderBottomLeftRadius: 30,
+    borderBottomRightRadius: 30
+  },
   ItemBackgroundImage: {
     width: '100%',
-    aspectRatio: 22 / 25,
+    aspectRatio: 20.4 / 26,
     justifyContent: 'space-between',
   },
   ImageHeaderBarContainerWithBack: {
+    marginTop: '4%',
     padding: SPACING.space_30,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
   },
   ImageHeaderBarContainerWithoutBack: {
+    marginTop: '4%',
     padding: SPACING.space_30,
     flexDirection: 'row',
     alignItems: 'center',
