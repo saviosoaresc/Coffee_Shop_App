@@ -12,7 +12,7 @@ import {
     type: string;
     name: string;
     imagelink_square: ImageProps;
-    special_ingredient: string;
+    // special_ingredient: string;
     prices: any;
     ItemPrice: string;
   }
@@ -21,7 +21,7 @@ const OrderItemCard: React.FC<OrderItemCardProps> = ({
     type,
     name,
     imagelink_square,
-    special_ingredient,
+    // special_ingredient,
     prices,
     ItemPrice,
 }) => {
@@ -36,7 +36,7 @@ const OrderItemCard: React.FC<OrderItemCardProps> = ({
           <Image source={imagelink_square} style={styles.Image} />
           <View>
             <Text style={styles.CardTitle}>{name}</Text>
-            <Text style={styles.CardSubtitle}>{special_ingredient}</Text>
+            {/* <Text style={styles.CardSubtitle}>{special_ingredient}</Text> */}
           </View>
         </View>
         <View>
@@ -108,6 +108,7 @@ const styles = StyleSheet.create({
         fontFamily: 'Poppins-Medium',
         fontSize: FONTSIZE.size_18,
         color: COLORS.primaryWhiteHex,
+        marginLeft: -10
       },
       CardSubtitle: {
         fontFamily: 'Poppins-Regular',
