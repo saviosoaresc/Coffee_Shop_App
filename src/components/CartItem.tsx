@@ -8,14 +8,13 @@ import {
   FONTSIZE, SPACING,
 } from '../theme/theme'
 import { LinearGradient } from 'expo-linear-gradient'
-// import CustomIcon from './CustomIcon'
-import { Entypo, Ionicons, FontAwesome } from '@expo/vector-icons'
+import { Ionicons, FontAwesome } from '@expo/vector-icons'
 
 interface CartItemProps {
   id: string;
   name: string;
   imagelink_square: ImageProps;
-  special_ingredient: string;
+  // special_ingredient: string;
   roasted: string;
   prices: any;
   type: string;
@@ -27,8 +26,8 @@ const CartItem: React.FC<CartItemProps> = ({
   id,
   name,
   imagelink_square,
-  special_ingredient,
-  roasted,
+  // special_ingredient,
+  // roasted,
   prices,
   type,
   incrementCartItemQuantityHandler,
@@ -47,11 +46,11 @@ const CartItem: React.FC<CartItemProps> = ({
             <Image source={imagelink_square} style={styles.CartItemImage} />
             <View style={styles.CartItemInfo}>
               <View>
-                <Text style={styles.CartItemTitle}>{name}</Text>
-                <Text style={styles.CartItemSubtitle}>{special_ingredient}</Text>
+                <Text style={[styles.CartItemTitle, {marginTop: '6%' ,fontSize: 25}]}>{name}</Text>
+                {/* <Text style={styles.CartItemSubtitle}></Text> */}
               </View>
               <View style={styles.CartItemRoastedContainer}>
-                <Text style={styles.CartItemRoastedText}>{roasted}</Text>
+                <Text style={styles.CartItemRoastedText}>Roasted Medium</Text>
               </View>
             </View>
           </View>
@@ -121,7 +120,7 @@ const CartItem: React.FC<CartItemProps> = ({
           <View style={styles.CartItemSingleInfoContainer}>
             <View>
               <Text style={styles.CartItemTitle}>{name}</Text>
-              <Text style={styles.CartItemSubtitle}>{special_ingredient}</Text>
+              {/* <Text style={styles.CartItemSubtitle}>{special_ingredient}</Text> */}
             </View>
             <View style={styles.CartItemSingleSizeValueContainer}>
               <View style={styles.SizeBox}>
@@ -199,6 +198,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingVertical: SPACING.space_4,
     justifyContent: 'space-between',
+    alignItems: 'center'
   },
   CartItemTitle: {
     fontFamily: 'Poppins-Medium',
