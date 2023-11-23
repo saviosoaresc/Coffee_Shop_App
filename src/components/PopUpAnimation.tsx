@@ -5,13 +5,13 @@ import LottieView from 'lottie-react-native'
 
 interface PopUpAnimationProps {
   style: any;
-  source: any;
+  source: string;
 }
 
 const PopUpAnimation: React.FC<PopUpAnimationProps> = ({ style, source }) => {
   return (
     <View style={styles.LottieAnimationContainer}>
-      <LottieView style={style} source={source} autoPlay loop={false} />
+      <LottieView style={style} source={source} autoPlay loop={true} />
     </View>
   )
 }
@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
     zIndex: 1000,
     backgroundColor: COLORS.secondaryBlackRGBA,
     justifyContent: 'center',
+    alignItems: 'center'
   },
 })
 
