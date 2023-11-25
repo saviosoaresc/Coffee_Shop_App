@@ -28,10 +28,10 @@ const FavoriteScreen = ({navigation}: any) => {
         <View
           style={[styles.ScrollViewInnerView, {marginBottom: tabBarHeight}]}>
           <View style={styles.ItemContainer}>
-            <HeaderBar title="Favorites" />
+            <HeaderBar title="Favoritos" />
 
             {FavoritesList.length == 0 ? (
-              <EmptyListAnimation title={'No Favourites'} />
+              <EmptyListAnimation title={'Sem Favoritos'} />
             ) : (
               <View style={styles.ListItemContainer}>
                 {FavoritesList.map((data: any) => (
