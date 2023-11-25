@@ -15,7 +15,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import GradientBGIcon from '../components/GradientBGIcon';
 import { useStore } from '../store/store';
 import PaymentMethod from '../components/PaymentMethod';
-import {MaterialCommunityIcons, Fontisto} from '@expo/vector-icons'
+import { MaterialCommunityIcons, Fontisto } from '@expo/vector-icons'
 
 const PaymentList = [
   {
@@ -39,7 +39,7 @@ const PaymentList = [
     icon: require('../assets/app_images/amazonpay.png'),
     isIcons: false
   },
-]
+];
 
 const PaymentScreen = ({navigation, route}: any) => {
 
@@ -49,22 +49,25 @@ const PaymentScreen = ({navigation, route}: any) => {
   const [paymentMode, setPaymentMode] = useState('Credit Card');
   const [showAnimation, setShowAnimation] = useState(false);
 
-  const buttonPressHandler = () =>{
+  const buttonPressHandler = () => {
+    //seta a animacao como true
     setShowAnimation(true);
+    //adiciona para lista de HistoryFromCart
     addToOrderHistoryListFromCart();
     calculateCartPrice();
-    setTimeout(()=>{
+    // deixa a animacao durante 5 segundos, ao acabar encerra a animacao e navega pro History
+    setTimeout(() => {
       setShowAnimation(false);
       navigation.navigate('History');
-      },2000);
-  }
+      }, 3000);
+  };
 
   return (
     <View style={styles.ScreenContainer}>
       <StatusBar backgroundColor={COLORS.primaryBlackHex}/>
       {showAnimation ? (
         <PopUpAnimation
-          style={styles.ScreenContainer}
+          style={styles.LottieAnimation}
           source={require('../lottie/successful.json')}
         />
       ) : (
