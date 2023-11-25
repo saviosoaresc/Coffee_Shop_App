@@ -1,3 +1,3 @@
 # AJEITAR
 
-* No Cart (carrinho) ao clicar no botao "PAY", da problema no 'source' -> supplied to 'Image', expera um type [number]
+* In Cart (carrinho) at the click of the button "PAY", problem in the 'source' -> supplied to 'Image', wait a type [number]
