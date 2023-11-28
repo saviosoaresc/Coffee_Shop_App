@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
@@ -9,15 +9,19 @@ import PaymentScreen from './src/screens/PaymentScreen';
 import DetailsScreen from './src/screens/DetailsScreen';
 import TabNavigator from './src/navigators/TabNavigator';
 import * as SplashScreen from 'expo-splash-screen';
+import Login from './src/Login';
+
 
 const Stack = createNativeStackNavigator();
-
 export default function App() {
+  const [user, setUser] = useState();
   useEffect(() => {
     SplashScreen.hideAsync();
   }, [])
   return (
-    <NavigationContainer>
+    <SafeAreaView>
+      <Login/>
+      {/* <NavigationContainer>
       <StatusBar style='light' />
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen
@@ -38,7 +42,8 @@ export default function App() {
           options={{ animation: 'slide_from_bottom' }}>
         </Stack.Screen>
       </Stack.Navigator>
-    </NavigationContainer>
+    </NavigationContainer> */}
+    </SafeAreaView>
   );
 };
 
