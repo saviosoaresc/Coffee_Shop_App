@@ -8,6 +8,7 @@ import TabNavigator from './src/navigators/TabNavigator';
 import * as SplashScreen from 'expo-splash-screen';
 import Login from './src/login';
 
+//SIGNOUT
 
 const Stack = createNativeStackNavigator();
 export default function App() {
@@ -24,21 +25,18 @@ export default function App() {
           <Stack.Screen
             name='Tab'
             component={TabNavigator}
-            initialParams={{ setUser }}
             options={{ animation: 'slide_from_bottom' }}>
           </Stack.Screen>
   
           <Stack.Screen
             name='Details'
             component={DetailsScreen}
-            initialParams={{ setUser }}
             options={{ animation: 'slide_from_bottom' }}>
           </Stack.Screen>
   
           <Stack.Screen
             name='Payment'
             component={PaymentScreen}
-            initialParams={{ setUser }}
             options={{ animation: 'slide_from_bottom' }}>
           </Stack.Screen>
         </Stack.Navigator>
