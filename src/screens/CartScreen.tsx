@@ -1,17 +1,18 @@
 import {
-  StyleSheet, View,
+  View,
   ScrollView, StatusBar, TouchableOpacity
 } from 'react-native'
 import React from 'react'
 import { useStore } from '../store/store';
 import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
-import { COLORS, SPACING } from '../theme/theme';
+import { COLORS } from '../theme/theme';
 import HeaderBar from '../components/HeaderBar';
 import EmptyListAnimation from '../components/EmptyListAnimation';
 import PaymentFooter from '../components/PaymentFooter';
 import CartItem from '../components/CartItem';
+import styles from './styles/CartScreenStyle';
 
-const CartScreen = ({ navigation, route }: any) => {
+const CartScreen = ({ navigation }: any) => {
 
   const CartList = useStore((state: any) => state.CartList);
   const CartPrice = useStore((state: any) => state.CartPrice);
@@ -92,30 +93,4 @@ const CartScreen = ({ navigation, route }: any) => {
     </View>
   )
 }
-
-
-const styles = StyleSheet.create({
-  ScreenContainer: {
-    flex: 1,
-    backgroundColor: COLORS.primaryBlackHex,
-  },
-  ScrollViewFlex: {
-    flexGrow: 1,
-  },
-  ScrollViewInnerView: {
-    flex: 1,
-    justifyContent: 'space-between',
-  },
-  ItemContainer: {
-    flex: 1,
-  },
-  ListItemContainer: {
-    paddingHorizontal: SPACING.space_20,
-    gap: SPACING.space_20,
-  },
-  contentFooter: {
-    marginTop: '2%'
-  }
-})
-
 export default CartScreen
