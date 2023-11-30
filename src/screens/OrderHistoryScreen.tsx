@@ -4,17 +4,13 @@ import {
   StatusBar, ScrollView, TouchableOpacity
 } from 'react-native'
 import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs'
-import {
-  BORDERRADIUS,
-  COLORS,
-  FONTSIZE,
-  SPACING,
-} from '../theme/theme';
+import {COLORS} from '../theme/theme';
 import HeaderBar from '../components/HeaderBar';
 import EmptyListAnimation from '../components/EmptyListAnimation';
 import PopUpAnimation from '../components/PopUpAnimation';
 import OrderHistoryCard from '../components/OrderHistoryCard';
 import { useStore } from '../store/store';
+import styles from './styles/OrderHistoryScreenStyle';
 
 
 const OrderHistoryScreen = ({ navigation }: any) => {
@@ -92,41 +88,5 @@ const OrderHistoryScreen = ({ navigation }: any) => {
 }
 
 
-const styles = StyleSheet.create({
-  ScreenContainer: {
-    flex: 1,
-    backgroundColor: COLORS.primaryBlackHex,
-  },
-  LottieAnimation: {
-    height: 250,
-  },
-  ScrollViewFlex: {
-    flexGrow: 1,
-  },
-  ScrollViewInnerView: {
-    flex: 1,
-    justifyContent: 'space-between',
-  },
-  ItemContainer: {
-    flex: 1,
-  },
-  ListItemContainer: {
-    paddingHorizontal: SPACING.space_20,
-    gap: SPACING.space_30,
-  },
-  DownloadButton: {
-    margin: SPACING.space_20,
-    backgroundColor: COLORS.primaryOrangeHex,
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: SPACING.space_36 * 2,
-    borderRadius: BORDERRADIUS.radius_20,
-  },
-  ButtonText: {
-    fontFamily: 'Poppins-Semibold',
-    fontSize: FONTSIZE.size_18,
-    color: COLORS.primaryWhiteHex,
-  },
-})
 
 export default OrderHistoryScreen
