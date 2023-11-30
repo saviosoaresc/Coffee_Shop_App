@@ -23,7 +23,7 @@ import {
 import styles from "./style";
 import { Ionicons, AntDesign } from "@expo/vector-icons";
 
-export default function Login() {
+export default function Login({setUser}) {
   const [modalVisible, setModalVisible] = useState(false);
   const [hidePass, setHidepass] = useState(true);
   const [password, setPassword] = useState();
@@ -101,7 +101,7 @@ export default function Login() {
         const user = userCredential.user;
         console.log("Usuário logado com sucesso:", user);
         Sucessfull();
-        // setUser(user);
+        setUser(user);
       })
       .catch((error) => {
         // const errorCode = error.code;
@@ -273,9 +273,11 @@ export default function Login() {
               if (passwordCad == passwordCad2 && passwordCad != null) {
                 handleRegistrar();
                 nullFielsCad();
+                Keyboard.dismiss();
               } else {
                 setErrorMessageCad("Insira todos os seus dados");
                 nullFielsCad()
+                Keyboard.dismiss();
               }
             }}
           >
