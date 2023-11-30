@@ -9,6 +9,7 @@ import HeaderBar from '../components/HeaderBar'
 import EmptyListAnimation from '../components/EmptyListAnimation'
 import FavoritesItemCard from '../components/FavoritesItemCard'
 import {COLORS, SPACING} from '../theme/theme';
+import styles from './styles/FavoriteScreenStyle'
 
 const FavoriteScreen = ({navigation}: any) => {
   const FavoritesList = useStore((state: any) => state.FavoritesList)
@@ -68,27 +69,5 @@ const FavoriteScreen = ({navigation}: any) => {
     </View>
   )
 }
-
-
-const styles = StyleSheet.create({
-  ScreenContainer: {
-    flex: 1,
-    backgroundColor: COLORS.primaryBlackHex,
-  },
-  ScrollViewFlex: {
-    flexGrow: 1,
-  },
-  ScrollViewInnerView: {
-    flex: 1,
-    justifyContent: 'space-between',
-  },
-  ItemContainer: {
-    flex: 1,
-  },
-  ListItemContainer: {
-    paddingHorizontal: SPACING.space_20,
-    gap: SPACING.space_20,
-  },
-})
 
 export default FavoriteScreen
