@@ -18,3 +18,7 @@ npx expo install lottie-react-native
 npx expo install @react-native-async-storage/async-storage
 npm i zustand
 npm i immer
+npx expo install expo-splash-screen
+npx expo install expo-font
+npx expo install @expo-google-fonts/poppins
+npm install -g firebase-tools
