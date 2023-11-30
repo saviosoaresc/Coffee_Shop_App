@@ -7,7 +7,8 @@ import HomeScreen from '../screens/HomeScreen';
 import FavoriteScreen from '../screens/FavoriteScreen';
 import CartScreen from '../screens/CartScreen';
 import OrderHistoryScreen from '../screens/OrderHistoryScreen';
-import { Entypo, FontAwesome5, Ionicons } from '@expo/vector-icons';
+import { Entypo, FontAwesome5, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
+import WholeCoffee from '../screens/WholeCoffee';
 
 
 const Tab = createBottomTabNavigator();
@@ -77,6 +78,21 @@ const TabNavigator = () => {
                     tabBarIcon: ({ focused, color, size }) => (
                         <Ionicons
                             name='notifications'
+                            size={25}
+                            color={
+                                focused ? COLORS.primaryOrangeHex : COLORS.primaryLightGreyHex
+                            }
+                        />
+                    ),
+                }}
+            ></Tab.Screen>
+            <Tab.Screen
+                name='Whole'
+                component={WholeCoffee}
+                options={{
+                    tabBarIcon: ({ focused, color, size }) => (
+                        <MaterialCommunityIcons
+                            name='coffee-maker'
                             size={25}
                             color={
                                 focused ? COLORS.primaryOrangeHex : COLORS.primaryLightGreyHex
