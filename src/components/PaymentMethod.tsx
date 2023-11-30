@@ -1,13 +1,12 @@
 import { LinearGradient } from 'expo-linear-gradient'
 import React from 'react'
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { Text, View, Image } from 'react-native'
 import {
-  BORDERRADIUS,
   COLORS,
   FONTSIZE,
-  SPACING,
 } from '../theme/theme';
 import { Entypo } from '@expo/vector-icons'
+import styles from './styles/PaymentMethodStyle';
 
 interface PaymentMethodProps{
   paymentMode: string;
@@ -58,50 +57,5 @@ const PaymentMethod: React.FC<PaymentMethodProps> = ({paymentMode, name, icon, i
     </View>
   )
 }
-
-
-const styles = StyleSheet.create({
-  PaymentCardContainer: {
-    borderRadius: BORDERRADIUS.radius_15 * 2,
-    backgroundColor: COLORS.primaryGreyHex,
-    borderWidth: 3,
-  },
-  LinearGradientWallet: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    padding: SPACING.space_12,
-    paddingHorizontal: SPACING.space_24,
-    gap: SPACING.space_24,
-    borderRadius: BORDERRADIUS.radius_15 * 2,
-  },
-  WalletRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: SPACING.space_24,
-  },
-  LinearGradientRegular: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    padding: SPACING.space_12,
-    paddingHorizontal: SPACING.space_24,
-    gap: SPACING.space_24,
-    borderRadius: BORDERRADIUS.radius_15 * 2,
-  },
-  PaymentTitle: {
-    fontFamily: 'Poppins-Semibold',
-    fontSize: FONTSIZE.size_16,
-    color: COLORS.primaryWhiteHex,
-  },
-  PaymentPrice: {
-    fontFamily: 'Poppins-Regular',
-    fontSize: FONTSIZE.size_16,
-    color: COLORS.secondaryLightGreyHex,
-  },
-  PaymentImage: {
-    height: SPACING.space_30,
-    width: SPACING.space_30,
-  },
-})
 
 export default PaymentMethod
