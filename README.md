@@ -1,4 +1,4 @@
-# Coffee_Shop_App
+# Coffee_Shop_App (E-Commerce App)
 
 
 
