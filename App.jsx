@@ -8,8 +8,6 @@ import TabNavigator from './src/navigators/TabNavigator';
 import * as SplashScreen from 'expo-splash-screen';
 import Login from './src/login';
 
-//SIGNOUT
-
 const Stack = createNativeStackNavigator();
 export default function App() {
   const [user, setUser] = useState();
